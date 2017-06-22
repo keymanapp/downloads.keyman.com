@@ -1,0 +1,7 @@
+RewriteEngine On
+
+#
+# Note: HTTPS upgrade has been done in CloudFlare configuration
+#
+
+RedirectMatch 301 ^/$ https://keyman.com/downloads/
