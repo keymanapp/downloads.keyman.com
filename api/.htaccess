@@ -1,2 +1,3 @@
 RewriteEngine On
-RewriteRule ^(version)$ version-info.php [L]
+RewriteRule ^version$ versioninfo.php [L]
+RewriteRule ^version/(android|ios|mac|web|windows)$ versioninfo.php?platform=$1 [L]
