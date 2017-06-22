@@ -28,7 +28,7 @@
     }
   */
   
-  header('Content-Type: text/plain, charset=utf-8');
+  header('Content-Type: application/json; charset=utf-8');
   
   $allowed_platforms = array('android', 'ios', 'mac', 'web', 'windows');
   
