@@ -29,6 +29,7 @@
   */
   
   header('Content-Type: application/json; charset=utf-8');
+  header('Cache-Control: max-age=0');
   
   $allowed_platforms = array('android', 'ios', 'mac', 'web', 'windows');
   
