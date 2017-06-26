@@ -1,31 +1,8 @@
 <?php
   /**
+    API documentation: https://github.com/sillsdev/keyman/wiki/downloads.keyman.com-API
+    
     Finds the latest versions of downloads and returns a JSON blob with the data. The first *.download_info file in each folder will be checked.
-  
-    Parameters:  [platform]    The target platform. If omitted, returns data for all platforms
-    Returns:     JSON blob, format below
-    
-    
-    JSON blob format. Only 'stable', 'beta' and 'alpha' codes are supported. The alpha or beta value may point to a release with a higher stability
-    level if it is newer than any release at the reference stability level. A record will only be returned for a given stability level if a download
-    is found that meets the stability match.
-    
-    {
-      "<platform-name>": {
-        "stable": { 
-          "version": "1.2.3.4", 
-          "path": "/<platform-name>/1.2.3.4"
-        },
-        "beta": {
-          "version": "1.2.3.4", 
-          "path": "/<platform-name>/1.2.3.4"
-        },
-        "alpha": {
-          "version": "1.2.3.4",
-          "path": "/<platform-name/1.2.3.4"
-        }
-      }, ...
-    }
   */
   
   header('Content-Type: application/json; charset=utf-8');
@@ -37,10 +14,15 @@
   // Parameter checks for platforms
   //
   
+  function fail($s) {
+    header("HTTP/1.0 500 $s");
+    exit;
+  }
+  
   if(isset($_REQUEST['platform'])) {
     $platform = $_REQUEST['platform'];
     if(!preg_match('/^('.implode('|', $allowed_platforms).')$/', $platform)) {
-      die('Invalid platform: Only '.implode('/', $allowed_platforms).' allowed');
+      fail('Invalid platform: Only '.implode('/', $allowed_platforms).' allowed');
     }
     $platforms = array($platform);
   } else {
@@ -110,6 +92,9 @@
       if(count($p) >= 3) break;
     }
     
+    if(count($p) == 0) {
+      $p = null;
+    }
     $result[$platform] = $p;
   }
   
