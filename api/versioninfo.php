@@ -15,7 +15,7 @@
   //
   
   function fail($s) {
-    header("HTTP/1.0 500 $s");
+    header("HTTP/1.0 400 $s");
     exit;
   }
   
@@ -98,5 +98,5 @@
     $result[$platform] = $p;
   }
   
-  echo json_encode($result, JSON_PRETTY_PRINT);
+  echo json_encode($result, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 ?>
