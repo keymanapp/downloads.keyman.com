@@ -15,7 +15,7 @@
   //
   
   function fail($s) {
-    header("HTTP/1.0 500 $s");
+    header("HTTP/1.0 400 $s");
     exit;
   }
   
