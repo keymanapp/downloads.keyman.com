@@ -9,7 +9,7 @@
   header('Cache-Control: max-age=0');
   
   $allowed_platforms = array('android', 'ios', 'mac', 'web', 'windows');
-  $tiers = array('alpha', 'beta', 'stable');
+  $release_tiers = array('alpha', 'beta', 'stable');
   
   //
   // Parameter checks for platforms
@@ -35,6 +35,7 @@
   function version_filter($a) {
     global $platform;
     if($a == '.' || $a == '..') return false;
+    // Match only files/folders that have names in an a.b[.c[.d...]] version numbering pattern
     return preg_match('/^\d+\.\d+(\.\d+)*$/', $a);
   }
   
@@ -53,7 +54,7 @@
    
     $p = array();
     
-    foreach($tiers as $tier) {
+    foreach($release_tiers as $tier) {
       $dirs = scandir("../$platform/$tier");
       $dirs = array_filter($dirs, 'version_filter');
       if(count($dirs) > 0) {
