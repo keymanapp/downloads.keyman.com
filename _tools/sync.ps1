@@ -7,13 +7,6 @@ $REMOTE_RSYNC_PATH=$env:REMOTE_RSYNC_PATH
 $dstroot=$env:DSTROOT
 
 #
-# Translate current folder for cygwin
-#
-
-$srcroot=(get-item $pwd).parent.fullName
-$srcroot=$srcroot -replace "^([a-z]):",'/cygdrive/$1'
-
-#
 # Upload with rsync to downloads.keyman.com
 # (rsync requires that we are in the upload folder to get folders in 
 # sync correctly; it is possible to resolve this but easier to just cd.)
