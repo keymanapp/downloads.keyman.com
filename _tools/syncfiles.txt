@@ -1,0 +1,8 @@
+api/.htaccess
+api/versioninfo.php
+.htaccess
+android/.htaccess
+ios/.htaccess
+mac/.htaccess
+web/.htaccess
+windows/.htaccess
