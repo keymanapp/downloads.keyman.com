@@ -7,7 +7,8 @@ as additional files will be in place. .rsyncignore is a pseudo
 .ignore file for rsync that lists files in this repo that should
 not be put onto downloads.keyman.com.
 
-For now, we only do manual uploads of files that change here.
+The _tools folder contains a script that determines which files should
+be synchronised using rsync
 
 * Update this document to note new files that should be uploaded
 
