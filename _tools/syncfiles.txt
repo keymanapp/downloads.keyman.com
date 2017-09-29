@@ -1,5 +1,6 @@
 api/.htaccess
 api/versioninfo.php
+api/historydata.php
 .htaccess
 android/.htaccess
 ios/.htaccess
