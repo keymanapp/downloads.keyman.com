@@ -34,9 +34,8 @@ if(isset($_REQUEST['platform'])) {
   if(!preg_match('/^('.implode('|', $allowed_platforms).')$/', $platform)) {
     fail('Invalid platform: Only '.implode('/', $allowed_platforms).' allowed');
   }
-  $platforms = array($platform);
 } else {
-  $platforms = $allowed_platforms;
+  fail("Must specify a platform for history.md retrieval!");
 }
 
 // Doing the actual work.
@@ -47,14 +46,12 @@ function get_history_contents($platform) {
 
   $contents = @file_get_contents($inputURL);
 
-  if($contents == FALSE) {
+  if($contents === FALSE) {
     fail("Cannot locate history information!");
   }
   echo $contents;
 }
 
-for($i=0; $i < count($platforms); $i++) {
-  get_history_contents($platforms[$i]);
-  echo "";
-}
+get_history_contents($platform);
+
 ?>
