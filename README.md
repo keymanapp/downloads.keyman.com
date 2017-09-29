@@ -15,6 +15,7 @@ be synchronised using rsync
 ## Files to upload
 
 * api/versioninfo.php should be uploaded to downloads.keyman.com
+* api/historydata.php should be uploaded to downloads.keyman.com
 * .htaccess in each folder should be uploaded
 
 ## Files not for upload
