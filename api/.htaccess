@@ -1,7 +1,6 @@
 RewriteEngine On
 RewriteRule ^version$ versioninfo.php [L]
 RewriteRule ^version/(1.0|2.0)$ versioninfo.php?version=$1 [L]
-RewriteRule ^version/(android|ios|mac|web|windows)$ versioninfo.php?platform=$1 [L]
-RewriteRule ^version/(android|ios|mac|web|windows)/(1.0|2.0)$ versioninfo.php?platform=$1&version=$2 [L]
-RewriteRule ^history$ historydata.php [L]
-RewriteRule ^history/(android|ios|mac|web|windows)$ historydata.php?platform=$1 [L]
+RewriteRule ^version/(android|ios|mac|web|windows|developer)$ versioninfo.php?platform=$1 [L]
+RewriteRule ^version/(android|ios|mac|web|windows|developer)/(1.0|2.0)$ versioninfo.php?platform=$1&version=$2 [L]
+RewriteRule ^history/(android|ios|mac|web|windows|developer)$ historydata.php?platform=$1 [L]
