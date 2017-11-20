@@ -1,6 +1,8 @@
 api/.htaccess
 api/versioninfo.php
 api/historydata.php
+api/keyboard.php
+api/util.php
 .htaccess
 android/.htaccess
 ios/.htaccess
@@ -8,3 +10,4 @@ mac/.htaccess
 web/.htaccess
 windows/.htaccess
 developer/.htaccess
+keyboards/.htaccess
