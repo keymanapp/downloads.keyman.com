@@ -10,3 +10,4 @@ mac/.htaccess
 web/.htaccess
 windows/.htaccess
 developer/.htaccess
+keyboards/.htaccess
