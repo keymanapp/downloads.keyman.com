@@ -5,3 +5,9 @@ RewriteEngine On
 #
 
 RedirectMatch 301 ^/$ https://keyman.com/downloads/
+
+#
+# .kmx, .kmp should not be treated as a ZIP file
+#
+
+AddType application/octet-stream .kmp .kmx
