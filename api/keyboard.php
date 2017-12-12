@@ -58,7 +58,7 @@
   }
   
   $dirs = scandir("../keyboards/$id");
-  $dirs = array_filter($dirs, 'version_filter');
+  $dirs = array_filter($dirs, 'special_folders_filter');
   if(count($dirs) == 0) {
     fail('No downloads exist for '.$id);
   }
