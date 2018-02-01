@@ -68,7 +68,7 @@
   // Go through and report on windows, js, kmp downloads.
   // Find the latest Windows download, expecting a format of keymandesktop-<ver>-<id>-<kbdver>.exe
   
-  $base = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http') . "://{$_SERVER['SERVER_NAME']}/keyboards/$id/{$dirs[0]}/";
+  $base = "https://{$_SERVER['SERVER_NAME']}/keyboards/$id/{$dirs[0]}/";
   $winver = '0';
   foreach($files as $file) {
     if(preg_match('/^keymandesktop-([0-9.]+)-(.+)\.exe$/', $file, $matches)) {
