@@ -11,3 +11,6 @@ RedirectMatch 301 ^/$ https://keyman.com/downloads/
 #
 
 AddType application/octet-stream .kmp .kmx
+AddType application/json .keyboard_info
+AddCharset UTF-8 .js
+AddCharset UTF-8 .keyboard_info
