@@ -8,7 +8,7 @@
 
 header('Content-Type: text/plain; charset=utf-8');
 
-$allowed_platforms = array('android', 'ios', 'mac', 'web', 'windows', 'developer');
+$allowed_platforms = array('android', 'ios', 'linux', 'mac', 'web', 'windows', 'developer');
 $allowed_versions = array('1.0'); // api versions, not product versions
 //$release_tiers = array('alpha', 'beta', 'stable');
 
