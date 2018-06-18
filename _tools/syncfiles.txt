@@ -6,6 +6,7 @@ api/util.php
 .htaccess
 android/.htaccess
 ios/.htaccess
+linux/.htaccess
 mac/.htaccess
 web/.htaccess
 windows/.htaccess

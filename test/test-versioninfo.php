@@ -7,7 +7,7 @@
   //
   header('Content-Type: text/plain');
 
-  $allowed_platforms = array('android', 'ios', 'mac', 'web', 'windows');
+  $allowed_platforms = array('android', 'ios', 'linux', 'mac', 'web', 'windows');
   $stabilities = array('alpha', 'alpha', 'alpha', 'alpha', 'alpha', 'beta', 'beta', 'stable');
   foreach($allowed_platforms as $p) {
     if(is_dir("../$p")) {
