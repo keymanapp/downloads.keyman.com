@@ -10,7 +10,10 @@ RedirectMatch 301 ^/$ https://keyman.com/downloads/
 # .kmx, .kmp should not be treated as a ZIP file
 #
 
-AddType application/octet-stream .kmp .kmx
+AddType application/x-keyman-package .kmp
+AddType application/x-keyman-keyboard .kmx
 AddType application/json .keyboard_info
+AddType application/json .model_info
 AddCharset UTF-8 .js
 AddCharset UTF-8 .keyboard_info
+AddCharset UTF-8 .model_info
