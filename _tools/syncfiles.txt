@@ -12,3 +12,4 @@ web/.htaccess
 windows/.htaccess
 developer/.htaccess
 keyboards/.htaccess
+models/.htaccess
