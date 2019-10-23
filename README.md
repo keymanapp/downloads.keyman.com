@@ -14,10 +14,11 @@ be synchronised using rsync
 
 ## Files to upload
 
-* api/versioninfo.php 
-* api/historydata.php 
+* api/versioninfo.php
+* api/historydata.php
 * api/keyboard.php
 * api/util.php
+* tools/*
 * **/.htaccess
 
 ## Files not for upload
