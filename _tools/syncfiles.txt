@@ -13,3 +13,4 @@ windows/.htaccess
 developer/.htaccess
 keyboards/.htaccess
 models/.htaccess
+tools/charident/charident.exe
