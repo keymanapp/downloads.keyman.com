@@ -7,13 +7,17 @@
 
   function special_folders_filter($a) {
     if($a == '.' || $a == '..') return false;
-    return true; 
+    return true;
   }
 
   function version_compare_backward($a, $b) {
     return version_compare($a, $b, '<');
   }
-  
+
+  function version_compare_forward($a, $b) {
+    return version_compare($a, $b, '>');
+  }
+
   function remove_utf8_bom($text) {
     $bom = pack('H*','EFBBBF');
     $text = preg_replace("/^$bom/", '', $text);
