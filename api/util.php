@@ -23,4 +23,10 @@
     $text = preg_replace("/^$bom/", '', $text);
     return $text;
   }
+
+  function fail($s) {
+    header("HTTP/1.0 400 $s");
+    exit;
+  }
+
 ?>
