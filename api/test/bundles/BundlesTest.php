@@ -47,7 +47,7 @@
 
       $result = json_encode($bundles->get_bundles($filter, $keyboards, $versionInfo, $get_keyboard_info), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
-      $expected = file_get_contents(FIXTURES_PATH . "/bundles.test.expected.$filter.json");
+      $expected = file_get_contents(FIXTURES_PATH . "/bundles.test.data.$filter.expected.json");
 
       $this->assertSame($result, $expected);
     }

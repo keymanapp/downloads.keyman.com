@@ -1,28 +1,12 @@
 <?php
-  // bundles/all shows a list of all bundles
-  // bundles/current shows a list of the latest version of each bundles
-  // bundles/missing shows bundles that have never been built: note that this also shows non-Windows .kmp files when debug mode
-  //                 because we don't have access to the .keyboard_info files in debug mode
-  // bundles/outdated shows bundles that are on old versions of Keyman or keyboard
-  // bundles/expired shows bundles that could be deleted
-  //
-  // {
-  //   "khmer_angkor": {
-  //     "versions": {
-  //       "1.1": {
-  //         "windows": {
-  //            "12.0.52.0": {
-  //              url: "/keyboards/khmer_angkor/1.1/keymandesktop-12.0.52.0-khmer_angkor-1.1.exe", // for all, current, expired
-  //              missing: true    // for missing, outdated
-  //            }, ...
-  //         ]
-  //       }, ...
-  //     }
-  //   }, ...
-  // }
-  //
+  /**
+    API documentation: https://github.com/keymanapp/keyman/wiki/downloads.keyman.com-bundles-API
 
-  //require_once('util.php');
+    Finds details about bundled versions of Keyman Desktop + keyboards and returns a JSON blob with the data.
+
+    Schema: schemas/bundles/1.0/bundles.json
+  */
+
   require_once('bundles.util.php');
   require_once('bundles.class.php');
 
@@ -31,23 +15,15 @@
 
   $filter = get_filter_param();
 
-  function get_filter_param() {
-    if(isset($_REQUEST['q'])) $filter = $_REQUEST['q'];
-    else $filter = 'all';
-
-    if(!in_array($filter, ['all','outdated','missing','current','expired'])) {
-      fail("Invalid q parameter, expecting: all, outdated, missing, current, expired");
-    }
-    return $filter;
-  }
-
   if(isset($_REQUEST['debug'])) {
+    // This pathway can be helpful for building new test fixtures
+    // keep for that reason :)
     $path_prefix = "https://downloads.keyman.com";
-    $versionInfo = file_get_contents('./bundles.test.version.json');
+    $versionInfo = file_get_contents('./test/bundles/fixtures/bundles.test.version.json');
     if($versionInfo === FALSE) {
       fail("Unable to retrieve test version info bundles.test.version.json");
     }
-    $keyboards = file_get_contents("./bundles.test.data.$filter.json");
+    $keyboards = file_get_contents("./test/bundles/fixtures/bundles.test.data.$filter.json");
     if($keyboards === FALSE) {
       fail("Unable to retrieve test data bundles.test.data.json");
     }
@@ -68,20 +44,7 @@
   };
 
   $bundles = new Bundles();
-  $result = $bundles->get_bundles($filter, $keyboards, $versionInfo);
+  $result = $bundles->get_bundles($filter, $keyboards, $versionInfo, $get_keyboard_info);
   echo json_encode($result, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-
-  function get_current_uri_base() {
-    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
-      $link = "https";
-    else
-      $link = "http";
-    // Here append the common URL characters.
-    $link .= "://";
-
-    // Append the host(domain name, ip) to the URL.
-    $link .= $_SERVER['HTTP_HOST'];
-    return $link;
-  }
 
 ?>

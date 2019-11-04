@@ -47,6 +47,9 @@
             }
           }
 
+          // At present, for 'expired', we don't delete the most recent installer for old versions
+          // of keyboards. This is something we could consider for the future.
+
           if($has_kmp || !in_array($filter, ['missing', 'outdated'])) {
             usort($appVersions, 'version_compare_forward');
             foreach($appVersions as $appVersion) {
@@ -118,7 +121,9 @@
           return [];
         case "expired":
           // bundles/expired shows bundles that could be deleted
-          if(count($bundles) == 1) return $bundles;
+          if(count($bundles) == 1)
+            // If only one bundle, never delete it!
+            return [];
           array_pop($bundles); // Never delete most recent version
           $result = [];
           foreach($bundles as $version => $bundle) {

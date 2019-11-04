@@ -25,4 +25,28 @@
     }
     return $result;
   }
+
+  function get_current_uri_base() {
+    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+      $link = "https";
+    else
+      $link = "http";
+    // Here append the common URL characters.
+    $link .= "://";
+
+    // Append the host(domain name, ip) to the URL.
+    $link .= $_SERVER['HTTP_HOST'];
+    return $link;
+  }
+
+  function get_filter_param() {
+    if(isset($_REQUEST['q'])) $filter = $_REQUEST['q'];
+    else $filter = 'all';
+
+    if(!in_array($filter, ['all','outdated','missing','current','expired'])) {
+      fail("Invalid q parameter, expecting: all, outdated, missing, current, expired");
+    }
+    return $filter;
+  }
+
 ?>
