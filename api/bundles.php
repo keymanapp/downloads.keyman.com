@@ -40,7 +40,11 @@
 
   $get_keyboard_info = function($keyboard, $version) {
     global $path_prefix;
-    return json_decode(file_get_contents("$path_prefix/keyboards/$keyboard/$version/$keyboard.keyboard_info"));
+    $result = @file_get_contents("$path_prefix/keyboards/$keyboard/$version/$keyboard.keyboard_info");
+    if($result === FALSE) {
+      fail("Unable to retrieve keyboard info for $keyboard/$version");
+    }
+    return json_decode($result);
   };
 
   $bundles = new Bundles();

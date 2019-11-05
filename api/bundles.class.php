@@ -5,7 +5,7 @@
     function get_bundles($filter, $keyboards, $versionInfo, $get_keyboard_info) {
       $result = [];
       $versionInfo = json_decode($versionInfo);
-      $appver = $versionInfo->windows->stable;
+      $windowsStableAppVersion = $versionInfo->windows->stable;
 
       //
       // Iterate through all keyboard folders now
@@ -56,7 +56,7 @@
               $windowsBundles[$appVersion] = ["url" => "/keyboards/$keyboard/$version/keymandesktop-$appVersion-$keyboard-$version.exe"];
             }
 
-            $windowsBundles = $this->filter_by_params($windowsBundles, $filter, $appver);
+            $windowsBundles = $this->filter_by_params($windowsBundles, $filter, $windowsStableAppVersion);
             if(count($windowsBundles) > 0) {
               $result_keyboard[$version] = ['windows' => $windowsBundles];
             }
@@ -74,7 +74,7 @@
           // For 'missing' we only care about the most recent version of the keyboard
           // that also includes a bundle -- so we filter after enumerating all bundles
           $current_version = array_keys($result_keyboard)[count($result_keyboard)-1];
-          if($result_keyboard[$current_version]['windows'][$appver]['missing']) {
+          if($result_keyboard[$current_version]['windows'][$windowsStableAppVersion]['missing']) {
             // Retrieve keyboard targets for this keyboard - we only care about Windows-targeted keyboards
             $keyboard_info = $get_keyboard_info($keyboard, $current_version);
 
@@ -94,7 +94,7 @@
       return $result;
     }
 
-    function filter_by_params($bundles, $filter, $appver) {
+    function filter_by_params($bundles, $filter, $windowsStableAppVersion) {
       switch($filter) {
         case "all":
           // bundles/all shows a list of all bundles
@@ -110,13 +110,13 @@
         case "missing":
           // bundles/missing shows bundles that have never been built
           if(count($bundles) == 0) {
-            return [ $appver => [ "missing" => true ] ];
+            return [ $windowsStableAppVersion => [ "missing" => true ] ];
           }
-          return [ $appver => [ "missing" => false ]];
+          return [ $windowsStableAppVersion => [ "missing" => false ]];
         case "outdated":
           // bundles/outdated shows bundles that are on old versions of Keyman or keyboard
-          if(!isset($bundles[$appver])) {
-            return [ $appver => [ "missing" => true ] ];
+          if(!isset($bundles[$windowsStableAppVersion])) {
+            return [ $windowsStableAppVersion => [ "missing" => true ] ];
           }
           return [];
         case "expired":
@@ -127,7 +127,7 @@
           array_pop($bundles); // Never delete most recent version
           $result = [];
           foreach($bundles as $version => $bundle) {
-            if($version != $appver) $result[$version] = $bundle;
+            if($version != $windowsStableAppVersion) $result[$version] = $bundle;
           }
           return $result;
         default:
