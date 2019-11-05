@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Bundles.result.json",
+  "description": "downloads.keyman.com bundles api JSON result schema",
+  "patternProperties": {
+    ".": {
+      "type": "object",
+      "properties": {
+        "windows": {
+          "type": "object",
+          "patternProperties": {
+            "^\\d+\\.\\d+\\.\\d+\\.\\d+$": {
+              "type": "object",
+              "properties": {
+                "url": { "type": "string" },
+                "missing": { "type": "boolean" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

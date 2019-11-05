@@ -8,3 +8,8 @@ RewriteRule ^history/(android|ios|linux|mac|web|windows|developer)$ historydata.
 
 RewriteRule ^keyboard/(1.0)/(.+)$ keyboard.php?version=$1&id=$2 [L]
 RewriteRule ^keyboard/(.+)$ keyboard.php?id=$1 [L]
+
+RewriteRule ^bundles(/?)$ bundles.php?q=all [L]
+RewriteRule ^bundles/(.+)$ bundles.php?q=$1 [L]
+RewriteRule ^bundles/1.0(/?)$ bundles.php?q=all [L]
+RewriteRule ^bundles/1.0/(.+)$ bundles.php?q=$1 [L]

@@ -1,0 +1,171 @@
+{
+    "acoli": {
+        "1.0": [
+            "acoli.keyboard_info",
+            "acoli.kmp",
+            "keymandesktop-10.0.1207.0-acoli-1.0.exe",
+            "keymandesktop-11.0.1353.0-acoli-1.0.exe",
+            "keymandesktop-11.0.1356.0-acoli-1.0.exe",
+            "keymandesktop-11.0.1359.0-acoli-1.0.exe",
+            "keymandesktop-11.0.1360.0-acoli-1.0.exe",
+            "keymandesktop-11.0.1361.0-acoli-1.0.exe",
+            "keymandesktop-12.0.50.0-acoli-1.0.exe",
+            "keymandesktop-12.0.51.0-acoli-1.0.exe",
+            "keymandesktop-12.0.52.0-acoli-1.0.exe"
+        ]
+    },
+    "africadeadkey": {
+        "1.0": [
+            "africadeadkey.keyboard_info",
+            "africadeadkey.kmp",
+            "keymandesktop-10.0.1207.0-africadeadkey-1.0.exe",
+            "keymandesktop-11.0.1353.0-africadeadkey-1.0.exe",
+            "keymandesktop-11.0.1356.0-africadeadkey-1.0.exe",
+            "keymandesktop-11.0.1359.0-africadeadkey-1.0.exe",
+            "keymandesktop-11.0.1360.0-africadeadkey-1.0.exe",
+            "keymandesktop-11.0.1361.0-africadeadkey-1.0.exe",
+            "keymandesktop-12.0.50.0-africadeadkey-1.0.exe",
+            "keymandesktop-12.0.51.0-africadeadkey-1.0.exe",
+            "keymandesktop-12.0.52.0-africadeadkey-1.0.exe"
+        ]
+    },
+    "africaus": {
+        "1.0": [
+            "africaus.keyboard_info",
+            "africaus.kmp",
+            "keymandesktop-10.0.1207.0-africaus-1.0.exe",
+            "keymandesktop-11.0.1353.0-africaus-1.0.exe",
+            "keymandesktop-11.0.1356.0-africaus-1.0.exe",
+            "keymandesktop-11.0.1359.0-africaus-1.0.exe",
+            "keymandesktop-11.0.1360.0-africaus-1.0.exe",
+            "keymandesktop-11.0.1361.0-africaus-1.0.exe",
+            "keymandesktop-12.0.50.0-africaus-1.0.exe",
+            "keymandesktop-12.0.51.0-africaus-1.0.exe",
+            "keymandesktop-12.0.52.0-africaus-1.0.exe"
+        ]
+    },
+    "afro": {
+        "1.2": [
+            "afro.keyboard_info",
+            "afro.kmp",
+            "keymandesktop-10.0.1207.0-afro-1.2.exe",
+            "keymandesktop-11.0.1353.0-afro-1.2.exe",
+            "keymandesktop-11.0.1356.0-afro-1.2.exe",
+            "keymandesktop-11.0.1359.0-afro-1.2.exe",
+            "keymandesktop-11.0.1360.0-afro-1.2.exe",
+            "keymandesktop-11.0.1361.0-afro-1.2.exe",
+            "keymandesktop-12.0.50.0-afro-1.2.exe",
+            "keymandesktop-12.0.51.0-afro-1.2.exe",
+            "keymandesktop-12.0.52.0-afro-1.2.exe"
+        ]
+    },
+    "aksarabali_panlex": {
+        "1.0": [
+            "aksarabali_panlex.js",
+            "aksarabali_panlex.keyboard_info",
+            "aksarabali_panlex.kmp",
+            "keymandesktop-11.0.1361.0-aksarabali_panlex-1.0.exe"
+        ],
+        "1.0.1": [
+            "aksarabali_panlex.js",
+            "aksarabali_panlex.keyboard_info",
+            "aksarabali_panlex.kmp",
+            "keymandesktop-11.0.1361.0-aksarabali_panlex-1.0.1.exe"
+        ],
+        "1.0.2": [
+            "aksarabali_panlex.js",
+            "aksarabali_panlex.keyboard_info",
+            "aksarabali_panlex.kmp",
+            "keymandesktop-11.0.1361.0-aksarabali_panlex-1.0.2.exe"
+        ],
+        "1.0.3": [
+            "aksarabali_panlex.js",
+            "aksarabali_panlex.keyboard_info",
+            "aksarabali_panlex.kmp",
+            "keymandesktop-11.0.1361.0-aksarabali_panlex-1.0.3.exe"
+        ],
+        "1.0.4": [
+            "aksarabali_panlex.js",
+            "aksarabali_panlex.keyboard_info",
+            "aksarabali_panlex.kmp",
+            "keymandesktop-11.0.1361.0-aksarabali_panlex-1.0.4.exe"
+        ],
+        "1.1.0": [
+            "aksarabali_panlex.js",
+            "aksarabali_panlex.keyboard_info",
+            "aksarabali_panlex.kmp",
+            "keymandesktop-11.0.1361.0-aksarabali_panlex-1.1.0.exe",
+            "keymandesktop-12.0.50.0-aksarabali_panlex-1.1.0.exe",
+            "keymandesktop-12.0.51.0-aksarabali_panlex-1.1.0.exe",
+            "keymandesktop-12.0.52.0-aksarabali_panlex-1.1.0.exe"
+        ]
+    },
+    "albanian": {
+        "1.0": [
+            "albanian-1.0.js",
+            "albanian.js",
+            "albanian.keyboard_info"
+        ]
+    },
+    "amazigh_lat.kmn": {
+        "1.1": [
+            "amazigh_lat.kmn.keyboard_info",
+            "amazigh_lat.kmn.kmp",
+            "keymandesktop-10.0.1207.0-amazigh_lat.kmn-1.1.exe",
+            "keymandesktop-11.0.1353.0-amazigh_lat.kmn-1.1.exe",
+            "keymandesktop-11.0.1356.0-amazigh_lat.kmn-1.1.exe",
+            "keymandesktop-11.0.1359.0-amazigh_lat.kmn-1.1.exe",
+            "keymandesktop-11.0.1360.0-amazigh_lat.kmn-1.1.exe",
+            "keymandesktop-11.0.1361.0-amazigh_lat.kmn-1.1.exe",
+            "keymandesktop-12.0.50.0-amazigh_lat.kmn-1.1.exe",
+            "keymandesktop-12.0.51.0-amazigh_lat.kmn-1.1.exe",
+            "keymandesktop-12.0.52.0-amazigh_lat.kmn-1.1.exe"
+        ]
+    },
+    "anii_2015_fr_pack2": {
+        "2015.05.22.2": [
+            "anii_2015_fr_pack2.keyboard_info",
+            "anii_2015_fr_pack2.kmp",
+            "keymandesktop-10.0.1207.0-anii_2015_fr_pack2-2015.05.22.2.exe",
+            "keymandesktop-11.0.1353.0-anii_2015_fr_pack2-2015.05.22.2.exe",
+            "keymandesktop-11.0.1356.0-anii_2015_fr_pack2-2015.05.22.2.exe",
+            "keymandesktop-11.0.1359.0-anii_2015_fr_pack2-2015.05.22.2.exe",
+            "keymandesktop-11.0.1360.0-anii_2015_fr_pack2-2015.05.22.2.exe",
+            "keymandesktop-11.0.1361.0-anii_2015_fr_pack2-2015.05.22.2.exe",
+            "keymandesktop-12.0.50.0-anii_2015_fr_pack2-2015.05.22.2.exe",
+            "keymandesktop-12.0.51.0-anii_2015_fr_pack2-2015.05.22.2.exe",
+            "keymandesktop-12.0.52.0-anii_2015_fr_pack2-2015.05.22.2.exe"
+        ]
+    },
+    "arabic_101": {
+        "1.0": [
+            "arabic_101-1.0.js",
+            "arabic_101.js",
+            "arabic_101.keyboard_info"
+        ]
+    },
+    "fv_bodewadminwen": {
+        "9.1": [
+            "fv_bodewadminwen.js",
+            "fv_bodewadminwen.keyboard_info",
+            "fv_bodewadminwen.kmp"
+        ]
+    },
+    "yorubaok": {
+        "1.0": [
+            "keymandesktop-10.0.1207.0-yorubaok-1.0.exe",
+            "keymandesktop-11.0.1353.0-yorubaok-1.0.exe",
+            "keymandesktop-11.0.1356.0-yorubaok-1.0.exe",
+            "keymandesktop-11.0.1359.0-yorubaok-1.0.exe",
+            "keymandesktop-11.0.1360.0-yorubaok-1.0.exe",
+            "keymandesktop-11.0.1361.0-yorubaok-1.0.exe",
+            "keymandesktop-12.0.50.0-yorubaok-1.0.exe",
+            "keymandesktop-12.0.51.0-yorubaok-1.0.exe",
+            "keymandesktop-12.0.52.0-yorubaok-1.0.exe",
+            "keymandesktop-9.0.528.0-yorubaok-1.0.exe",
+            "yorubaok.keyboard_info",
+            "yorubaok.kmp",
+            "yorubaok.kmx"
+        ]
+    }
+}

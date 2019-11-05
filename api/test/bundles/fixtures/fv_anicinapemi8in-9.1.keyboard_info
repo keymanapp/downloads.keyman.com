@@ -1,0 +1,34 @@
+{
+  "id": "fv_anicinapemi8in",
+  "license": "mit",
+  "languages": [
+    "alq-Latn"
+  ],
+  "description": "This keyboard is designed for the Anicinapemi8in/Anishin\u00E0bemiwin language of the Eastern Subarctic region of Canada. This is part of a set of keyboards from FirstVoices.",
+  "related": {
+    "fv_anicinapemi8in_kmw": {
+      "deprecates": true
+    }
+  },
+  "name": "Anicinapemi8in/Anishin\u00E0bemiwin",
+  "lastModifiedDate": "2018-11-05T19:12:32.932Z",
+  "sourcePath": "release/fv/fv_anicinapemi8in",
+  "version": "9.1",
+  "packageFilename": "fv_anicinapemi8in.kmp",
+  "jsFilename": "fv_anicinapemi8in.js",
+  "encodings": [
+    "unicode"
+  ],
+  "jsFileSize": 12892,
+  "packageFileSize": 3456,
+  "packageIncludes": [
+    "documentation"
+  ],
+  "minKeymanVersion": "10.0",
+  "platformSupport": {
+    "desktopWeb": "full",
+    "mobileWeb": "full",
+    "android": "full",
+    "ios": "full"
+  }
+}

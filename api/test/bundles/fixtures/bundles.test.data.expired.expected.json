@@ -1,0 +1,145 @@
+{
+    "acoli": {
+        "1.0": {
+            "windows": {
+                "10.0.1207.0": {
+                    "url": "/keyboards/acoli/1.0/keymandesktop-10.0.1207.0-acoli-1.0.exe"
+                },
+                "11.0.1353.0": {
+                    "url": "/keyboards/acoli/1.0/keymandesktop-11.0.1353.0-acoli-1.0.exe"
+                },
+                "11.0.1356.0": {
+                    "url": "/keyboards/acoli/1.0/keymandesktop-11.0.1356.0-acoli-1.0.exe"
+                },
+                "11.0.1359.0": {
+                    "url": "/keyboards/acoli/1.0/keymandesktop-11.0.1359.0-acoli-1.0.exe"
+                },
+                "11.0.1360.0": {
+                    "url": "/keyboards/acoli/1.0/keymandesktop-11.0.1360.0-acoli-1.0.exe"
+                },
+                "11.0.1361.0": {
+                    "url": "/keyboards/acoli/1.0/keymandesktop-11.0.1361.0-acoli-1.0.exe"
+                },
+                "12.0.50.0": {
+                    "url": "/keyboards/acoli/1.0/keymandesktop-12.0.50.0-acoli-1.0.exe"
+                },
+                "12.0.51.0": {
+                    "url": "/keyboards/acoli/1.0/keymandesktop-12.0.51.0-acoli-1.0.exe"
+                }
+            }
+        }
+    },
+    "africaus": {
+        "1.0": {
+            "windows": {
+                "10.0.1207.0": {
+                    "url": "/keyboards/africaus/1.0/keymandesktop-10.0.1207.0-africaus-1.0.exe"
+                },
+                "11.0.1353.0": {
+                    "url": "/keyboards/africaus/1.0/keymandesktop-11.0.1353.0-africaus-1.0.exe"
+                },
+                "12.0.51.0": {
+                    "url": "/keyboards/africaus/1.0/keymandesktop-12.0.51.0-africaus-1.0.exe"
+                }
+            }
+        }
+    },
+    "arabic_izza": {
+        "1.2": {
+            "windows": {
+                "10.0.1207.0": {
+                    "url": "/keyboards/arabic_izza/1.2/keymandesktop-10.0.1207.0-arabic_izza-1.2.exe"
+                },
+                "11.0.1353.0": {
+                    "url": "/keyboards/arabic_izza/1.2/keymandesktop-11.0.1353.0-arabic_izza-1.2.exe"
+                },
+                "11.0.1356.0": {
+                    "url": "/keyboards/arabic_izza/1.2/keymandesktop-11.0.1356.0-arabic_izza-1.2.exe"
+                },
+                "11.0.1359.0": {
+                    "url": "/keyboards/arabic_izza/1.2/keymandesktop-11.0.1359.0-arabic_izza-1.2.exe"
+                },
+                "11.0.1360.0": {
+                    "url": "/keyboards/arabic_izza/1.2/keymandesktop-11.0.1360.0-arabic_izza-1.2.exe"
+                },
+                "11.0.1361.0": {
+                    "url": "/keyboards/arabic_izza/1.2/keymandesktop-11.0.1361.0-arabic_izza-1.2.exe"
+                },
+                "12.0.50.0": {
+                    "url": "/keyboards/arabic_izza/1.2/keymandesktop-12.0.50.0-arabic_izza-1.2.exe"
+                },
+                "12.0.51.0": {
+                    "url": "/keyboards/arabic_izza/1.2/keymandesktop-12.0.51.0-arabic_izza-1.2.exe"
+                }
+            }
+        }
+    },
+    "armenian unicode": {
+        "1.0": {
+            "windows": {
+                "10.0.1207.0": {
+                    "url": "/keyboards/armenian unicode/1.0/keymandesktop-10.0.1207.0-armenian unicode-1.0.exe"
+                },
+                "11.0.1353.0": {
+                    "url": "/keyboards/armenian unicode/1.0/keymandesktop-11.0.1353.0-armenian unicode-1.0.exe"
+                },
+                "11.0.1356.0": {
+                    "url": "/keyboards/armenian unicode/1.0/keymandesktop-11.0.1356.0-armenian unicode-1.0.exe"
+                },
+                "11.0.1359.0": {
+                    "url": "/keyboards/armenian unicode/1.0/keymandesktop-11.0.1359.0-armenian unicode-1.0.exe"
+                },
+                "11.0.1360.0": {
+                    "url": "/keyboards/armenian unicode/1.0/keymandesktop-11.0.1360.0-armenian unicode-1.0.exe"
+                },
+                "11.0.1361.0": {
+                    "url": "/keyboards/armenian unicode/1.0/keymandesktop-11.0.1361.0-armenian unicode-1.0.exe"
+                },
+                "12.0.50.0": {
+                    "url": "/keyboards/armenian unicode/1.0/keymandesktop-12.0.50.0-armenian unicode-1.0.exe"
+                }
+            }
+        }
+    },
+    "balochi_phonetic": {
+        "1.1.1": {
+            "windows": {
+                "10.0.1207.0": {
+                    "url": "/keyboards/balochi_phonetic/1.1.1/keymandesktop-10.0.1207.0-balochi_phonetic-1.1.1.exe"
+                },
+                "11.0.1350.0": {
+                    "url": "/keyboards/balochi_phonetic/1.1.1/keymandesktop-11.0.1350.0-balochi_phonetic-1.1.1.exe"
+                }
+            }
+        },
+        "1.1.2": {
+            "windows": {
+                "11.0.1353.0": {
+                    "url": "/keyboards/balochi_phonetic/1.1.2/keymandesktop-11.0.1353.0-balochi_phonetic-1.1.2.exe"
+                },
+                "11.0.1356.0": {
+                    "url": "/keyboards/balochi_phonetic/1.1.2/keymandesktop-11.0.1356.0-balochi_phonetic-1.1.2.exe"
+                },
+                "11.0.1359.0": {
+                    "url": "/keyboards/balochi_phonetic/1.1.2/keymandesktop-11.0.1359.0-balochi_phonetic-1.1.2.exe"
+                },
+                "11.0.1360.0": {
+                    "url": "/keyboards/balochi_phonetic/1.1.2/keymandesktop-11.0.1360.0-balochi_phonetic-1.1.2.exe"
+                }
+            }
+        },
+        "1.2": {
+            "windows": {
+                "11.0.1361.0": {
+                    "url": "/keyboards/balochi_phonetic/1.2/keymandesktop-11.0.1361.0-balochi_phonetic-1.2.exe"
+                },
+                "12.0.50.0": {
+                    "url": "/keyboards/balochi_phonetic/1.2/keymandesktop-12.0.50.0-balochi_phonetic-1.2.exe"
+                },
+                "12.0.51.0": {
+                    "url": "/keyboards/balochi_phonetic/1.2/keymandesktop-12.0.51.0-balochi_phonetic-1.2.exe"
+                }
+            }
+        }
+    }
+}

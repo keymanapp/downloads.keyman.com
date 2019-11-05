@@ -1,0 +1,153 @@
+{
+    "acoli": {
+        "1.0": [
+            "acoli.keyboard_info",
+            "acoli.kmp",
+            "keymandesktop-10.0.1207.0-acoli-1.0.exe",
+            "keymandesktop-11.0.1353.0-acoli-1.0.exe",
+            "keymandesktop-11.0.1356.0-acoli-1.0.exe",
+            "keymandesktop-11.0.1359.0-acoli-1.0.exe",
+            "keymandesktop-11.0.1360.0-acoli-1.0.exe",
+            "keymandesktop-11.0.1361.0-acoli-1.0.exe",
+            "keymandesktop-12.0.50.0-acoli-1.0.exe",
+            "keymandesktop-12.0.51.0-acoli-1.0.exe",
+            "keymandesktop-12.0.52.0-acoli-1.0.exe"
+        ]
+    },
+    "africadeadkey": {
+        "1.0": [
+            "africadeadkey.keyboard_info",
+            "africadeadkey.kmp",
+            "keymandesktop-12.0.52.0-africadeadkey-1.0.exe"
+        ]
+    },
+    "africaus": {
+        "1.0": [
+            "africaus.keyboard_info",
+            "africaus.kmp",
+            "keymandesktop-10.0.1207.0-africaus-1.0.exe",
+            "keymandesktop-11.0.1353.0-africaus-1.0.exe",
+            "keymandesktop-12.0.51.0-africaus-1.0.exe",
+            "keymandesktop-12.0.52.0-africaus-1.0.exe"
+        ]
+    },
+    "albanian": {
+        "1.0": [
+            "albanian-1.0.js",
+            "albanian.js",
+            "albanian.keyboard_info"
+        ]
+    },
+    "amazigh_lat.kmn": {
+        "1.1": [
+            "amazigh_lat.kmn.keyboard_info",
+            "amazigh_lat.kmn.kmp",
+            "keymandesktop-10.0.1207.0-amazigh_lat.kmn-1.1.exe"
+        ]
+    },
+    "anii_2015_fr_pack2": {
+        "2015.05.22.2": [
+            "anii_2015_fr_pack2.keyboard_info",
+            "anii_2015_fr_pack2.kmp",
+            "keymandesktop-12.0.50.0-anii_2015_fr_pack2-2015.05.22.2.exe"
+        ]
+    },
+    "arabic_101": {
+        "1.0": [
+            "arabic_101-1.0.js",
+            "arabic_101.js",
+            "arabic_101.keyboard_info"
+        ]
+    },
+    "arabic_izza": {
+        "1.0": [
+            "arabic_izza-1.0.js",
+            "arabic_izza.js",
+            "arabic_izza.keyboard_info",
+            "arabic_izza.kmp"
+        ],
+        "1.1": [
+            "arabic_izza.js",
+            "arabic_izza.keyboard_info",
+            "arabic_izza.kmp"
+        ],
+        "1.2": [
+            "arabic_izza.js",
+            "arabic_izza.keyboard_info",
+            "arabic_izza.kmp",
+            "keymandesktop-10.0.1207.0-arabic_izza-1.2.exe",
+            "keymandesktop-11.0.1353.0-arabic_izza-1.2.exe",
+            "keymandesktop-11.0.1356.0-arabic_izza-1.2.exe",
+            "keymandesktop-11.0.1359.0-arabic_izza-1.2.exe",
+            "keymandesktop-11.0.1360.0-arabic_izza-1.2.exe",
+            "keymandesktop-11.0.1361.0-arabic_izza-1.2.exe",
+            "keymandesktop-12.0.50.0-arabic_izza-1.2.exe",
+            "keymandesktop-12.0.51.0-arabic_izza-1.2.exe",
+            "keymandesktop-12.0.52.0-arabic_izza-1.2.exe"
+        ]
+    },
+    "armenian unicode": {
+        "1.0": [
+            "armenian unicode.keyboard_info",
+            "armenian unicode.kmp",
+            "keymandesktop-10.0.1207.0-armenian unicode-1.0.exe",
+            "keymandesktop-11.0.1353.0-armenian unicode-1.0.exe",
+            "keymandesktop-11.0.1356.0-armenian unicode-1.0.exe",
+            "keymandesktop-11.0.1359.0-armenian unicode-1.0.exe",
+            "keymandesktop-11.0.1360.0-armenian unicode-1.0.exe",
+            "keymandesktop-11.0.1361.0-armenian unicode-1.0.exe",
+            "keymandesktop-12.0.50.0-armenian unicode-1.0.exe",
+            "keymandesktop-12.0.51.0-armenian unicode-1.0.exe"
+        ]
+    },
+    "balochi_phonetic": {
+        "1.1": [
+            "balochi_phonetic-1.1.js",
+            "balochi_phonetic.js",
+            "balochi_phonetic.keyboard_info",
+            "balochi_phonetic.kmp",
+            "keymandesktop-10.0.1200.0-balochi_phonetic-1.1.exe"
+        ],
+        "1.1.1": [
+            "balochi_phonetic.js",
+            "balochi_phonetic.keyboard_info",
+            "balochi_phonetic.kmp",
+            "keymandesktop-10.0.1207.0-balochi_phonetic-1.1.1.exe",
+            "keymandesktop-11.0.1350.0-balochi_phonetic-1.1.1.exe",
+            "keymandesktop-11.0.1352.0-balochi_phonetic-1.1.1.exe"
+        ],
+        "1.1.2": [
+            "balochi_phonetic.js",
+            "balochi_phonetic.keyboard_info",
+            "balochi_phonetic.kmp",
+            "keymandesktop-11.0.1353.0-balochi_phonetic-1.1.2.exe",
+            "keymandesktop-11.0.1356.0-balochi_phonetic-1.1.2.exe",
+            "keymandesktop-11.0.1359.0-balochi_phonetic-1.1.2.exe",
+            "keymandesktop-11.0.1360.0-balochi_phonetic-1.1.2.exe",
+            "keymandesktop-11.0.1361.0-balochi_phonetic-1.1.2.exe"
+        ],
+        "1.2": [
+            "balochi_phonetic.js",
+            "balochi_phonetic.keyboard_info",
+            "balochi_phonetic.kmp",
+            "keymandesktop-11.0.1361.0-balochi_phonetic-1.2.exe",
+            "keymandesktop-12.0.50.0-balochi_phonetic-1.2.exe",
+            "keymandesktop-12.0.51.0-balochi_phonetic-1.2.exe",
+            "keymandesktop-12.0.52.0-balochi_phonetic-1.2.exe"
+        ]
+    },
+    "fv_anicinapemi8in_kmw": {
+        "9.0": [
+            "fv_anicinapemi8in_kmw-9.0.js",
+            "fv_anicinapemi8in_kmw.js",
+            "fv_anicinapemi8in_kmw.keyboard_info"
+        ]
+    },
+    "fv_anishinaabemowin": {
+        "9.1": [
+            "fv_anishinaabemowin.js",
+            "fv_anishinaabemowin.keyboard_info",
+            "fv_anishinaabemowin.kmp"
+        ]
+    }
+}

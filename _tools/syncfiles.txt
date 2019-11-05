@@ -1,4 +1,5 @@
 api/.htaccess
+api/bundles.*
 api/versioninfo.php
 api/historydata.php
 api/keyboard.php
