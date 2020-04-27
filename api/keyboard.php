@@ -1,8 +1,8 @@
 <?php
   require_once('util.php');
 
-  /**
-    API documentation: https://github.com/sillsdev/keyman/wiki/downloads.keyman.com-API
+  /*
+    API documentation: https://github.com/keymanapp/keyman/wiki/downloads.keyman.com-keyboard-API
 
     Gets the available download files for a given keyboard id
   */

@@ -1,4 +1,10 @@
 <?php
+/*
+    API documentation: https://github.com/keymanapp/keyman/wiki/downloads.keyman.com-history-API
+
+    Retrieves HISTORY.md
+  */
+
 /**
  * Created by PhpStorm.
  * User: joshua
