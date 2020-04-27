@@ -1,17 +1,17 @@
 <?php
-  /**
-    API documentation: https://github.com/sillsdev/keyman/wiki/downloads.keyman.com-API
-    
+  /*
+    API documentation: https://github.com/keymanapp/keyman/wiki/downloads.keyman.com-version-API
+
     Finds the latest versions of downloads and returns a JSON blob with the data. The first *.download_info file in each folder will be checked.
   */
-  
+
   header('Content-Type: application/json; charset=utf-8');
   header('Cache-Control: max-age=0');
-  
+
   $allowed_platforms = array('android', 'ios', 'linux', 'mac', 'web', 'windows', 'developer');
   $allowed_versions = array('1.0', '2.0'); // api versions, not product versions
   $release_tiers = array('alpha', 'beta', 'stable');
-  
+
   function fail($s) {
     header("HTTP/1.0 400 $s");
     exit;
@@ -20,17 +20,17 @@
   //
   // Parameter checks for platforms
   //
-  
+
   if(isset($_REQUEST['version'])) {
     $version = $_REQUEST['version'];
   } else {
     $version = '1.0';
   }
-  
+
   if(array_search($version, $allowed_versions) === FALSE) {
     fail('Invalid version: Only '.implode('/', $allowed_versions).' allowed');
   }
-  
+
   if(isset($_REQUEST['platform'])) {
     $platform = $_REQUEST['platform'];
     if(!preg_match('/^('.implode('|', $allowed_platforms).')$/', $platform)) {
@@ -40,31 +40,31 @@
   } else {
     $platforms = $allowed_platforms;
   }
-  
+
   $result = array();
-  
+
   function version_filter($a) {
     global $platform;
     if($a == '.' || $a == '..') return false;
     // Match only files/folders that have names in an a.b[.c[.d...]] version numbering pattern
     return preg_match('/^\d+\.\d+(\.\d+)*$/', $a);
   }
-  
+
   function version_compare_backward($a, $b) {
     return version_compare($a, $b, '<');
   }
-  
+
   function remove_utf8_bom($text) {
     $bom = pack('H*','EFBBBF');
     $text = preg_replace("/^$bom/", '', $text);
     return $text;
   }
-  
+
   foreach($platforms as $platform) {
     // Collect all the relevant directories for the platform, ordered by newest release first
-   
+
     $p = array();
-    
+
     foreach($release_tiers as $tier) {
       $dirs = scandir("../$platform/$tier");
       $dirs = array_filter($dirs, 'version_filter');
@@ -98,6 +98,6 @@
     }
     $result[$platform] = $p;
   }
-  
+
   echo json_encode($result, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 ?>

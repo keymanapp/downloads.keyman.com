@@ -1,5 +1,5 @@
 <?php
-  /**
+  /*
     API documentation: https://github.com/keymanapp/keyman/wiki/downloads.keyman.com-bundles-API
 
     Finds details about bundled versions of Keyman Desktop + keyboards and returns a JSON blob with the data.
