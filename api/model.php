@@ -10,9 +10,7 @@
   header('Content-Type: application/json; charset=utf-8');
   header('Cache-Control: max-age=0');
 
-  $allowed_platforms = array('android', 'ios' /*, 'linux', 'mac', 'web', 'windows'*/); // models only currently supported on iOS and Android
   $allowed_versions = array('1.0'); // api versions, not product versions
-  $release_tiers = array('alpha', 'beta', 'stable');
 
   //
   // Parameter checks for version, id
