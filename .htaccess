@@ -17,3 +17,13 @@ AddType application/json .model_info
 AddCharset UTF-8 .js
 AddCharset UTF-8 .keyboard_info
 AddCharset UTF-8 .model_info
+
+#
+# Keep rules following this point in sync with web.config
+#
+
+#
+# Rewrite windows/tier/version/keyman-setup+...exe bootstraps
+#
+
+RewriteRule ^windows/(alpha|beta|stable)/((\d+\.)+\d+)/keyman-setup(\..+)?\.exe$ windows/$1/$2/setup.exe [L]

@@ -24,3 +24,10 @@ be synchronised using rsync
 
 ## Files not for upload
 
+* web.config
+* api/web.config
+* test/*
+* **/.gitignore
+* _tools/build_local.php
+* README.md
+* LICENSE
