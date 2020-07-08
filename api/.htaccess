@@ -1,3 +1,4 @@
+# Keep this file in sync with web.config
 RewriteEngine On
 RewriteRule ^version$ versioninfo.php [L]
 RewriteRule ^version/(1.0|2.0)$ versioninfo.php?version=$1 [L]

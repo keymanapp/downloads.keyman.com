@@ -29,4 +29,22 @@
     exit;
   }
 
+  function get_host_url() {
+    // We will set protocol on the basis of the hostname
+    $hostname = $_SERVER['SERVER_NAME'];
+    if($hostname == 'downloads.keyman.com')
+      // production, always https (because downloads server is behind a front end, actual protocol reported to PHP may be http)
+      return 'https://downloads.keyman.com';
+    else if($hostname == 'staging-downloads-keyman-com.azurewebsites.net')
+      // staging, always https
+      return 'https://staging-downloads-keyman-com.azurewebsites.net';
+    else if($hostname == 'downloads.keyman.com.local')
+      // test and dev, always http
+      return 'http://downloads.keyman.com.local';
+
+    // unknown so return what we were given
+    $protocol = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' : 'http://';
+    return $protocol . $hostname;
+  }
+
 ?>
