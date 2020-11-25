@@ -90,41 +90,44 @@ function filter_for_platform($contents, $platform) {
 
   // Validate platform matches a scope defined in keymanapp/keyman/resources/scopes/scopes.json
   // Also include appropriate 'common' scopes per keymanapp/downloads.keyman.com#30
+  $scope_core_desktop = array('common\/core\/desktop');
+  $scope_core_web = array('common\/core\/web');
+  $scope_models = array('common\/models', 'common\/models\/types', 'common\/models\/templates', 'common\/models\/wordbreakers');
+  $scope_common_resources = array('common\/resources');
+
   switch($platform) {
     case 'linux':
     case 'mac':
     case 'windows':
       $allowed_scopes = array($platform, $platform.'\/config', $platform.'\/engine',
-        $platform.'\/resources', $platform.'\/samples',
-        'common\/core\/desktop');
+        $platform.'\/resources', $platform.'\/samples');
+      $allowed_scopes = array_merge($allowed_scopes, $scope_core_desktop);
       break;
 
     case 'developer':
       $allowed_scopes = array($platform, $platform.'\/compilers', $platform.'\/ide',
-        $platform.'\/resources', $platform.'\/tools',
-        'common\/core\/web');
+        $platform.'\/resources', $platform.'\/tools');
+      $allowed_scopes = array_merge($allowed_scopes, $scope_core_web);
       break;
 
     case 'web':
       $allowed_scopes = array($platform, $platform.'\/bookmarklet', $platform.'\/engine',
-        $platform.'\/resources', $platform.'\/ui', $platform.'\/tools',
-        'common\/core\/web',
-        'common\/models', 'common\/models\/types', 'common\/models\/templates', 'common\/models\/wordbreakers');
+        $platform.'\/resources', $platform.'\/ui', $platform.'\/tools');
+      $allowed_scopes = array_merge($allowed_scopes, $scope_core_web, $scope_models);
       break;
 
     // Filter out OEM history for android/ios
     case 'android':
     case 'ios':
       $allowed_scopes = array($platform, $platform.'\/app', $platform.'\/browser', $platform.'\/engine',
-        $platform.'\/resources', $platform.'\/samples',
-        'common\/core\/web',
-        'common\/models', 'common\/models\/types', 'common\/models\/templates', 'common\/models\/wordbreakers');
+        $platform.'\/resources', $platform.'\/samples');
+      $allowed_scopes = array_merge($allowed_scopes, $scope_core_web, $scope_models);
       break;
     // Invalid platforms already filtered by web.config
   }
 
   // All platforms include common/resources
-  array_push($allowed_scopes, 'common\/resources');
+  $allowed_scopes = array_merge($allowed_scopes, $scope_common_resources);
 
   $scopes_regex = join('|', $allowed_scopes);
   $lines = preg_split("/(\r\n|\n|\r)/", $contents);
