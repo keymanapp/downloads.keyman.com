@@ -68,6 +68,13 @@ function get_history_contents($platform, $version) {
       'developer' => 'Keyman Developer'
     ];
     $contents = preg_replace('/^# Keyman Version History/', '# ' . $platform_title[$platform] . ' Version History', $contents);
+
+    // Append chore for initial creation of 14.0.1 alpha
+    $contents = $contents . "\n\n* chore: Starting 14.0 release\n";
+
+    // Append reference to older history
+    $contents = $contents . "\n----\n\n" .
+      "Older $platform_title[$platform] History available at http://downloads.keyman.com/api/history/$platform\n";
   }
 
   echo $contents;
@@ -88,17 +95,24 @@ function filter_for_platform($contents, $platform) {
   switch($platform) {
     case 'linux':
     case 'mac':
-    case 'web':
     case 'windows':
-    case 'developer':
-      $allowed_scopes = array($platform);
+      $allowed_scopes = array($platform, $platform.'\/config', $platform.'\/engine',
+        $platform.'\/resources', $platform.'\/samples');
       break;
+    case 'developer':
+      $allowed_scopes = array($platform, $platform.'\/compilers', $platform.'\/ide',
+        $platform.'\/resources', $platform.'\/tools');
+      break;
+    case 'web':
+      $allowed_scopes = array($platform, $platform.'\/bookmarklet', $platform.'\/engine',
+        $platform.'\/resources', $platform.'\/ui', $platform.'\/tools');
+      break;
+
     // Filter out OEM history for android/ios
     case 'android':
-      $allowed_scopes = array('android', 'android\/engine', 'android\/app', 'android\/samples');
-      break;
     case 'ios':
-      $allowed_scopes = array('ios', 'ios\/engine', 'ios\/app', 'ios\/samples');
+      $allowed_scopes = array($platform, $platform.'\/app', $platform.'\/browser', $platform.'\/engine',
+        $platform.'\/resources', $platform.'\/samples');
       break;
     // Invalid platforms already filtered by web.config
   }
