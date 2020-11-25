@@ -57,18 +57,17 @@ function get_history_contents($platform, $version) {
   if ($version == '2.0') {
     $contents = filter_for_platform($contents, $platform);
 
-    // Update the title
-    switch ($platform) {
-      case 'linux':
-      case 'windows':
-      case 'android': $platform_title = 'Keyman for ' . ucfirst($platform); break;
-
-      case 'web': $platform_title = 'KeymanWeb'; break;
-      case 'developer': $platform_title = 'Keyman Developer'; break;
-      case 'mac': $platform_title = 'Keyman for macOS'; break;
-      case 'ios': $platform_title = 'Keyman for iOS'; break;
-    }
-    $contents = preg_replace('/^# Keyman Version History/', '# ' . $platform_title . ' Version History', $contents);
+    // Update the title for the platform
+    $platform_title = [
+      'android' => 'Keyman for Android',
+      'ios' => 'Keyman for iOS',
+      'linux' => 'Keyman for Linux',
+      'mac' => 'Keyman for macOS',
+      'web' => 'KeymanWeb',
+      'windows' => 'Keyman for Windows',
+      'developer' => 'Keyman Developer'
+    ];
+    $contents = preg_replace('/^# Keyman Version History/', '# ' . $platform_title[$platform] . ' Version History', $contents);
   }
 
   echo $contents;
@@ -107,10 +106,20 @@ function filter_for_platform($contents, $platform) {
   $scopes_regex = join('|', $allowed_scopes);
   $lines = preg_split("/(\r\n|\n|\r)/", $contents);
 
-  // Grep lines that start with '#' | '*' | ' '
-  $filtered_contents = preg_grep("/^(#| |\*( )+($commit_types_regex)\(($scopes_regex)\)).*$/", $lines);
+  // Grep lines that start with '#' | '*'
+  $filtered_contents = preg_grep("/^(#|\*( )+($commit_types_regex)\(($scopes_regex)\)).*$/", $lines);
+  $filtered_contents = array_values(array_filter($filtered_contents));
 
-  // TODO: filter out intermittent releases where $platform wasn't updated
+  // Filter out intermittent releases where $platform wasn't updated
+  foreach($filtered_contents as $index=>$line) {
+    if (stripos($line, '## ') !== false) {
+      // Consecutive lines that start with '## '
+      if ($index > 1 && stripos($filtered_contents[$index-1], '## ') !== false) {
+        $filtered_contents[$index-1] = '';
+      }
+    }
+  }
+  $filtered_contents = array_values(array_filter($filtered_contents));
 
   // Add whitespacing back
   return implode("\n\n", $filtered_contents);
