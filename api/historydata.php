@@ -121,7 +121,8 @@ function filter_for_platform($contents, $platform) {
   $lines = preg_split("/(\r\n|\n|\r)/", $contents);
 
   // Grep lines that start with '#' | '*'
-  $filtered_contents = preg_grep("/^(#|\*( )+($commit_types_regex)\(($scopes_regex)\)).*$/", $lines);
+  // scope might be separated by ','
+  $filtered_contents = preg_grep("/^(#|\*( )+($commit_types_regex)\(((.)*,)?($scopes_regex)\)).*$/", $lines);
   $filtered_contents = array_values(array_filter($filtered_contents));
 
   // Filter out intermittent releases where $platform wasn't updated
