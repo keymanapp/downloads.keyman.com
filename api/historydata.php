@@ -30,17 +30,20 @@ if(array_search($version, $allowed_versions) === FALSE) {
 
 if(isset($_REQUEST['platform'])) {
   $platform = $_REQUEST['platform'];
-  if(!preg_match('/^('.implode('|', $allowed_platforms).')$/', $platform)) {
-    fail('Invalid platform: Only '.implode('/', $allowed_platforms).' allowed');
+  if (!preg_match('/^(' . implode('|', $allowed_platforms) . ')$/', $platform)) {
+    fail('Invalid platform: Only ' . implode('/', $allowed_platforms) . ' allowed');
   }
-} else {
+} else if ($version == '2.0') {
+  $platform = 'all';
+} else if ($version == '1.0') {
+  // platform required for API version 1.0
   fail("Must specify a platform for history.md retrieval!");
 }
 
 // Doing the actual work.
 
 function get_history_contents($platform, $version) {
-// Reads straight from a file.  Likely to be useful for the history-exposing API.
+  // Reads straight from a file.  Likely to be useful for the history-exposing API.
   if ($version == '2.0') {
     $inputURL = "https://raw.githubusercontent.com/keymanapp/keyman/master/HISTORY.md";
   } else {
@@ -53,25 +56,24 @@ function get_history_contents($platform, $version) {
     fail("Cannot locate history information!");
   }
 
-  // Keyman 14.0+ needs to filter history.md by platform
-  if ($version == '2.0') {
+  if (($version == '2.0') && ($platform != 'all')) {
     $contents = filter_for_platform($contents, $platform);
 
     // Update the title for the platform
     $platform_title = [
-      'android' => 'Keyman for Android',
-      'ios' => 'Keyman for iOS',
-      'linux' => 'Keyman for Linux',
-      'mac' => 'Keyman for macOS',
-      'web' => 'KeymanWeb',
-      'windows' => 'Keyman for Windows',
-      'developer' => 'Keyman Developer'
+        'android' => 'Keyman for Android',
+        'ios' => 'Keyman for iOS',
+        'linux' => 'Keyman for Linux',
+        'mac' => 'Keyman for macOS',
+        'web' => 'KeymanWeb',
+        'windows' => 'Keyman for Windows',
+        'developer' => 'Keyman Developer'
     ];
     $contents = preg_replace('/^# Keyman Version History/', '# ' . $platform_title[$platform] . ' Version History', $contents);
 
-    // Append reference to older history
+    // Append reference to platform's older history
     $contents = $contents . "\n----\n\n" .
-      "Older $platform_title[$platform] History available at http://downloads.keyman.com/api/history/$platform\n";
+        "Older $platform_title[$platform] History available at http://downloads.keyman.com/api/history/$platform\n";
   }
 
   echo $contents;
