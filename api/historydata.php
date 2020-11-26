@@ -42,7 +42,7 @@ if(isset($_REQUEST['platform'])) {
 function get_history_contents($platform, $version) {
 // Reads straight from a file.  Likely to be useful for the history-exposing API.
   if ($version == '2.0') {
-    $inputURL = "./HISTORY.md";
+    $inputURL = "https://raw.githubusercontent.com/keymanapp/keyman/master/HISTORY.md";
   } else {
     $inputURL = "../$platform/history.md";
   }
