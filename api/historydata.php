@@ -56,8 +56,10 @@ function get_history_contents($platform, $version) {
     fail("Cannot locate history information!");
   }
 
-  if (($version == '2.0') && ($platform != 'all')) {
-    $contents = filter_for_platform($contents, $platform);
+  if ($version == '2.0') {
+    if ($platform != 'all') {
+      $contents = filter_for_platform($contents, $platform);
+    }
 
     // Remove the general history title for client to insert
     $contents = preg_replace('/^# Keyman Version History/', '', $contents);
