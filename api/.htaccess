@@ -6,6 +6,8 @@ RewriteRule ^version/(android|ios|linux|mac|web|windows|developer)$ versioninfo.
 RewriteRule ^version/(android|ios|linux|mac|web|windows|developer)/(1.0|2.0)$ versioninfo.php?platform=$1&version=$2 [L]
 
 RewriteRule ^history/(android|ios|linux|mac|web|windows|developer)$ historydata.php?platform=$1 [L]
+RewriteRule ^history/(android|ios|linux|mac|web|windows|developer)/(1.0|2.0)$ historydata.php?platform=$1&version=$2 [L]
+RewriteRule ^history/(1.0|2.0)$ historydata.php?version=$1 [L]
 
 RewriteRule ^keyboard/(1.0)/(.+)$ keyboard.php?version=$1&id=$2 [L]
 RewriteRule ^keyboard/(.+)$ keyboard.php?id=$1 [L]
