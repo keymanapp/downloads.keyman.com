@@ -35,7 +35,7 @@ if(isset($_REQUEST['platform'])) {
   }
 } else if ($version == '2.0') {
   $platform = 'all';
-} else if ($version == '1.0') {
+} else {
   // platform required for API version 1.0
   fail("Must specify a platform for history.md retrieval!");
 }
@@ -59,21 +59,10 @@ function get_history_contents($platform, $version) {
   if (($version == '2.0') && ($platform != 'all')) {
     $contents = filter_for_platform($contents, $platform);
 
-    // Update the title for the platform
-    $platform_title = [
-        'android' => 'Keyman for Android',
-        'ios' => 'Keyman for iOS',
-        'linux' => 'Keyman for Linux',
-        'mac' => 'Keyman for macOS',
-        'web' => 'KeymanWeb',
-        'windows' => 'Keyman for Windows',
-        'developer' => 'Keyman Developer'
-    ];
-    $contents = preg_replace('/^# Keyman Version History/', '# ' . $platform_title[$platform] . ' Version History', $contents);
+    // Remove the general history title for client to insert
+    $contents = preg_replace('/^# Keyman Version History/', '', $contents);
 
-    // Append reference to platform's older history
-    $contents = $contents . "\n----\n\n" .
-        "Older $platform_title[$platform] History available at http://downloads.keyman.com/api/history/$platform\n";
+    // Leave it to clients to also append reference to platform's older history
   }
 
   echo $contents;
