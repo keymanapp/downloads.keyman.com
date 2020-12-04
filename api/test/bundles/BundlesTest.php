@@ -1,9 +1,9 @@
 <?php
   use PHPUnit\Framework\TestCase;
 
-  require_once('../bundles.class.php');
+  require_once __DIR__ . '/../../bundles.class.php';
 
-  define('FIXTURES_PATH', 'bundles/fixtures');
+  define('FIXTURES_PATH', __DIR__ . '/fixtures');
 
   class BundlesTest extends TestCase {
     public function testAll() {
@@ -49,6 +49,6 @@
 
       $expected = file_get_contents(FIXTURES_PATH . "/bundles.test.data.$filter.expected.json");
 
-      $this->assertSame($result, $expected);
+      $this->assertJsonStringEqualsJsonString($result, $expected);
     }
   }
