@@ -4,5 +4,4 @@ test/
 web.config
 api/web.config
 _tools/build_local.php
-vendor/
-phpunit.xml
+

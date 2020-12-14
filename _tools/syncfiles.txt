@@ -1,6 +1,4 @@
-_common/KeymanSentry.php
 api/.htaccess
-api/schemas/bundles/1.0/bundles.json
 api/bundles.php
 api/bundles.class.php
 api/bundles.util.php
@@ -10,9 +8,6 @@ api/versioninfo.php
 api/historydata.php
 api/keyboard.php
 api/util.php
-api/base.php
-composer.json
-composer.lock
 .htaccess
 android/.htaccess
 ios/.htaccess
