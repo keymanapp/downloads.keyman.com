@@ -41,12 +41,19 @@
     $platforms = $allowed_platforms;
   }
 
+  if(isset($_REQUEST['targetVersion'])) {
+    $targetVersion = $_REQUEST['targetVersion'];
+  }
+
   $result = array();
 
   function version_filter($a) {
-    global $platform;
+    global $targetVersion;
     if($a == '.' || $a == '..') return false;
     // Match only files/folders that have names in an a.b[.c[.d...]] version numbering pattern
+    if(!empty($targetVersion)) {
+      return $a == $targetVersion || $a == "$targetVersion.0";
+    }
     return preg_match('/^\d+\.\d+(\.\d+)*$/', $a);
   }
 
