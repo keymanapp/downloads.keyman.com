@@ -47,6 +47,9 @@
 
   $result = array();
 
+  if(file_exists('../embargo.txt'))
+    $embargo = trim(file_get_contents('../embargo.txt'));
+
   function version_filter($a) {
     global $targetVersion;
     if($a == '.' || $a == '..') return false;
@@ -55,6 +58,15 @@
       return $a == $targetVersion || $a == "$targetVersion.0";
     }
     return preg_match('/^\d+\.\d+(\.\d+)*$/', $a);
+  }
+
+  function release_embargo_filter($a) {
+    // We use the release filter file /embargo.txt
+    // If this exists, then we prevent that version
+    // or newer from appearing in stable releases
+    global $embargo;
+    if(empty($embargo)) return true;
+    return version_compare($a, $embargo, '<');
   }
 
   function version_compare_backward($a, $b) {
@@ -75,6 +87,7 @@
     foreach($release_tiers as $tier) {
       $dirs = scandir("../$platform/$tier");
       $dirs = array_filter($dirs, 'version_filter');
+      if($tier == 'stable') $dirs = array_filter($dirs, 'release_embargo_filter');
       if(count($dirs) > 0) {
         usort($dirs, 'version_compare_backward');
         if($version == '1.0') {
