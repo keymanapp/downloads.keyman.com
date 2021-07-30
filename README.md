@@ -18,7 +18,6 @@ be synchronised using rsync
 * api/historydata.php
 * api/keyboard.php
 * api/util.php
-* api/bundles.*
 * tools/*
 * **/.htaccess
 
