@@ -15,7 +15,3 @@ RewriteRule ^keyboard/(.+)$ keyboard.php?id=$1 [L]
 RewriteRule ^model/(1.0)/(.+)$ model.php?version=$1&id=$2 [L]
 RewriteRule ^model/(.+)$ model.php?id=$1 [L]
 
-RewriteRule ^bundles(/?)$ bundles.php?q=all [L]
-RewriteRule ^bundles/(.+)$ bundles.php?q=$1 [L]
-RewriteRule ^bundles/1.0(/?)$ bundles.php?q=all [L]
-RewriteRule ^bundles/1.0/(.+)$ bundles.php?q=$1 [L]

@@ -11,16 +11,6 @@
 
     <ul>
       <li>
-        /api/bundles: [<a href='https://github.com/keymanapp/keyman/wiki/downloads.keyman.com-bundles-API'>documentation</a>]
-        (
-          <a href='/api/bundles/all'>all</a> |
-          <a href='/api/bundles/current'>current</a> |
-          <a href='/api/bundles/missing'>missing</a> |
-          <a href='/api/bundles/outdated'>outdated</a> |
-          <a href='/api/bundles/expired'>expired</a>
-        )
-      </li>
-      <li>
         /api/keyboard: [<a href='https://github.com/keymanapp/keyman/wiki/downloads.keyman.com-keyboard-API'>documentation</a>]
       </li>
       <li>

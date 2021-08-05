@@ -1,7 +1,4 @@
 api/.htaccess
-api/bundles.php
-api/bundles.class.php
-api/bundles.util.php
 api/index.php
 api/model.php
 api/versioninfo.php
