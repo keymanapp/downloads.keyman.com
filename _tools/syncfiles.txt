@@ -17,3 +17,4 @@ keyboards/.htaccess
 models/.htaccess
 tools/charident/charident.exe
 tools/tsysinfo/tsysinfo.exe
+robots.txt

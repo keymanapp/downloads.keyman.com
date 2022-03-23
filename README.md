@@ -20,6 +20,7 @@ be synchronised using rsync
 * api/util.php
 * tools/*
 * **/.htaccess
+* robots.txt
 
 ## Files not for upload
 
