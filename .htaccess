@@ -27,5 +27,11 @@ AddCharset UTF-8 .download_info
 #
 # Rewrite windows/tier/version/keyman-setup+...exe bootstraps
 #
+# We also have a similar rule in our cloudflare front end, to improve
+# caching:
+#    (http.request.full_uri matches "https://downloads.keyman.com/windows/[^/]+/[^/]+/keyman-setup.(.+).exe")
+# Rewrite to:
+#    regex_replace(http.request.uri.path, "/windows/([^/]+)/([^/]+)/keyman-setup.(.+).exe(.*)", "/windows/${1}/${2}/setup.exe${4}")
+#
 
 RewriteRule ^windows/(alpha|beta|stable)/((\d+\.)+\d+)/keyman-setup(\..+)?\.exe$ windows/$1/$2/setup.exe [L]

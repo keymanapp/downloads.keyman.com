@@ -1,3 +1,25 @@
+# We don't need bots downloading binary files
+User-agent: *
+Disallow: /*.apk$
+Disallow: /*.dmg$
+Disallow: /*.exe$
+Disallow: /*.gz$
+Disallow: /*.ipa$
+Disallow: /*.kmp$
+Disallow: /*.kmx$
+Disallow: /*.kvk$
+Disallow: /*.msi$
+Disallow: /*.zip$
+
+# symbol files (note, _ is compressed version)
+Disallow: /*.db_$
+Disallow: /*.dbg$
+Disallow: /*.dl_$
+Disallow: /*.dll$
+Disallow: /*.ex_$
+Disallow: /*.pd_$
+Disallow: /*.pdb$
+
 # This bot is too busy (300K+ visits/month across all keyman.com domains)
 User-agent: AhrefsBot
 Disallow: /
