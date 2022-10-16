@@ -8,7 +8,7 @@ $dstroot=$env:DSTROOT
 
 #
 # Upload with rsync to downloads.keyman.com
-# (rsync requires that we are in the upload folder to get folders in 
+# (rsync requires that we are in the upload folder to get folders in
 # sync correctly; it is possible to resolve this but easier to just cd.)
 #
 
@@ -26,5 +26,6 @@ $rsync_args = @(
 )
 
 & $RSYNC_HOME\rsync.exe $rsync_args
+if ($LASTEXITCODE -ne 0) { throw "Exit code is $LASTEXITCODE" }
 
 # EOF
