@@ -21,6 +21,30 @@ AddCharset UTF-8 .model_info
 AddCharset UTF-8 .download_info
 
 #
+# Caching rules for downloads; later rules override earlier ones
+#
+
+# Cache everything except api folder, which is controlled by script response headers
+Header setifempty Cache-Control max-age=2419200 "expr=%{REQUEST_URI} !~ m#^/api/#"
+
+# Never cache directory indexes
+Header set Cache-Control no-cache "expr=%{REQUEST_URI} =~ m#^/[a-z]+/alpha/$#"
+Header set Cache-Control no-cache "expr=%{REQUEST_URI} =~ m#^/[a-z]+/beta/$#"
+Header set Cache-Control no-cache "expr=%{REQUEST_URI} =~ m#^/[a-z]+/stable/$#"
+Header set Cache-Control no-cache "expr=%{REQUEST_URI} =~ m#^/[a-z]+/alpha/[0-9.]+/$#"
+Header set Cache-Control no-cache "expr=%{REQUEST_URI} =~ m#^/[a-z]+/beta/[0-9.]+/$#"
+Header set Cache-Control no-cache "expr=%{REQUEST_URI} =~ m#^/[a-z]+/stable/[0-9.]+/$#"
+
+# Never cache Windows symbol index
+Header set Cache-Control no-cache "expr=%{REQUEST_URI} =~ m#^/windows/symbols/000Admin/#"
+
+# Never cache data folder
+Header set Cache-Control no-cache "expr=%{REQUEST_URI} =~ m#^/data/#"
+
+# Never cache failed requests ('always' applies to failed requests)
+Header always set Cache-Control no-cache "expr=%{REQUEST_STATUS} == 404"
+
+#
 # Keep rules following this point in sync with web.config
 #
 
