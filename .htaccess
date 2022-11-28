@@ -35,3 +35,22 @@ AddCharset UTF-8 .download_info
 #
 
 RewriteRule ^windows/(alpha|beta|stable)/((\d+\.)+\d+)/keyman-setup(\..+)?\.exe$ windows/$1/$2/setup.exe [L]
+
+#
+# We want to lower-case all module names in the Symbol Server folders, so that we can treat
+# them all as case-insensitive. This is important because Windows is not case-sensitive, so
+# it can be fairly arbitrary on file names.
+#
+# This depends on the following RewriteMap rule set in /etc/apache2/...conf
+#
+#    RewriteMap lc int:tolower
+#
+# For example:
+#    https://downloads.keyman.com/windows/symbols/TIKE.EXE/636562DBfc6000/Tike.ex_
+#
+# Will get rewritten to:
+#    https://downloads.keyman.com/windows/symbols/tike.exe/636562DBfc6000/tike.ex_
+#
+RewriteRule ^windows/symbols/([^/]+)/([^/]+)/(.+)$ windows/symbols/${lc:$1}/$2/${lc:$3} [R]
+RewriteRule ^windows/symbols/([^/]+)/([^/]+)/?$ windows/symbols/${lc:$1}/$2/ [R]
+RewriteRule ^windows/symbols/([^/]+)/?$ windows/symbols/${lc:$1}/ [R]
