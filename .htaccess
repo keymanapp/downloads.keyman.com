@@ -51,6 +51,6 @@ RewriteRule ^windows/(alpha|beta|stable)/((\d+\.)+\d+)/keyman-setup(\..+)?\.exe$
 # Will get rewritten to:
 #    https://downloads.keyman.com/windows/symbols/tike.exe/636562DBfc6000/tike.ex_
 #
-RewriteRule ^windows/symbols/([^/]+)/([^/]+)/(.+)$ windows/symbols/${lc:$1}/$2/${lc:$3} [R]
-RewriteRule ^windows/symbols/([^/]+)/([^/]+)/?$ windows/symbols/${lc:$1}/$2/ [R]
-RewriteRule ^windows/symbols/([^/]+)/?$ windows/symbols/${lc:$1}/ [R]
+RewriteRule ^windows/symbols/([^/]+)/([^/]+)/(.+)$ windows/symbols/${lc:$1}/$2/${lc:$3} [L]
+RewriteRule ^windows/symbols/([^/]+)/([^/]+)/?$ windows/symbols/${lc:$1}/$2/ [L]
+RewriteRule ^windows/symbols/([^/]+)/?$ windows/symbols/${lc:$1}/ [L]
