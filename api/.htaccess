@@ -2,6 +2,7 @@
 RewriteEngine On
 RewriteRule ^version$ versioninfo.php [L,QSA]
 RewriteRule ^version/(1.0|2.0)$ versioninfo.php?version=$1 [L,QSA]
+RewriteRule ^version/all$ versioninfoall.php [L,QSA]
 RewriteRule ^version/(android|ios|linux|mac|web|windows|developer)$ versioninfo.php?platform=$1 [L,QSA]
 RewriteRule ^version/(android|ios|linux|mac|web|windows|developer)/(1.0|2.0)$ versioninfo.php?platform=$1&version=$2 [L,QSA]
 
