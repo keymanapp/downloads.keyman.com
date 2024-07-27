@@ -2,8 +2,8 @@
   /*
     API documentation: https://github.com/keymanapp/keyman/wiki/downloads.keyman.com-version-API#all-versions-api
 
-    Returns a list of all versions of Keyman, starting with version 10.0, grouped by major version:
-      { "10.0": { "alpha": ["10.0.1", ...], "beta": ["10.0.111", ...], "stable": ["10.0.112", ...] }, "11.0": ..., ... }
+    Returns a list of all versions of Keyman, starting with version 14.0, grouped by major version:
+      { "14.0": { "alpha": ["14.0.1", ...], "beta": ["14.0.111", ...], "stable": ["14.0.112", ...] }, "15.0": ..., ... }
 
     Uses data from web folder as canonical across all platforms
   */
@@ -55,8 +55,8 @@
       foreach($dirs as $dir) {
         if(preg_match('/^(\d+\.\d+)\./', $dir, $matches)) {
           $major = $matches[1];
-          if((double) $major < 10) {
-            // we did not have convergent version numbers before 10.0, don't list
+          if((double) $major < 14) {
+            // we did not have convergent version numbers before 14.0, don't list
             continue;
           }
           if(!array_key_exists($major, $result)) {
