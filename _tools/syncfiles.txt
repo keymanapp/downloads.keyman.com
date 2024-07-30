@@ -2,6 +2,7 @@ api/.htaccess
 api/index.php
 api/model.php
 api/versioninfo.php
+api/versioninfoall.php
 api/historydata.php
 api/keyboard.php
 api/util.php
