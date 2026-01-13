@@ -30,6 +30,12 @@
     $version = '1.0';
   }
 
+  if(isset($_REQUEST['detail'])) {
+    $detail = $_REQUEST['detail'];
+  } else {
+    $detail = 0;
+  }
+
   if(array_search($version, $allowed_versions) === FALSE) {
     fail('Invalid version: Only '.implode('/', $allowed_versions).' allowed');
   }
@@ -47,22 +53,49 @@
 
   // Collect all the relevant directories for the platform, ordered by newest release first
 
-  foreach($release_tiers as $tier) {
-    $dirs = scandir("../$platform/$tier");
-    $dirs = array_filter($dirs, 'version_filter');
-    if(count($dirs) > 0) {
-      usort($dirs, 'version_compare_backward');
-      foreach($dirs as $dir) {
-        if(preg_match('/^(\d+\.\d+)\./', $dir, $matches)) {
-          $major = $matches[1];
-          if((double) $major < 14) {
-            // we did not have convergent version numbers before 14.0, don't list
-            continue;
+  if($detail) {
+    foreach($release_tiers as $tier) {
+      $dirs = scandir("../$platform/$tier");
+      $dirs = array_filter($dirs, 'version_filter');
+      if(count($dirs) > 0) {
+        // usort($dirs, 'version_compare_backward');
+        foreach($dirs as $dir) {
+          if(preg_match('/^(\d+\.\d+)\./', $dir, $matches)) {
+            $major = $matches[1];
+            if((double) $major < 17) {
+              // we only need recent stats since v18
+              continue;
+            }
+            $path = "../$platform/$tier/$dir/keymanweb-$dir.zip.download_info";
+            if(file_exists($path)) {
+              $blob = json_decode(file_get_contents($path));
+              $date = $blob->date;
+            } else {
+              $date = 'unknown';
+            }
+            $result["$dir-$tier"] = $date;
           }
-          if(!array_key_exists($major, $result)) {
-            $result[$major] = array('alpha' => array(), 'beta' => array(), 'stable' => array());
+        }
+      }
+    }
+  } else {
+    foreach($release_tiers as $tier) {
+      $dirs = scandir("../$platform/$tier");
+      $dirs = array_filter($dirs, 'version_filter');
+      if(count($dirs) > 0) {
+        usort($dirs, 'version_compare_backward');
+        foreach($dirs as $dir) {
+          if(preg_match('/^(\d+\.\d+)\./', $dir, $matches)) {
+            $major = $matches[1];
+            if((double) $major < 14) {
+              // we did not have convergent version numbers before 14.0, don't list
+              continue;
+            }
+            if(!array_key_exists($major, $result)) {
+              $result[$major] = array('alpha' => array(), 'beta' => array(), 'stable' => array());
+            }
+            array_push($result[$major][$tier], $dir);
           }
-          array_push($result[$major][$tier], $dir);
         }
       }
     }
