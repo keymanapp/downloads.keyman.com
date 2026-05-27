@@ -12,10 +12,9 @@ RUN docker-php-ext-install zip
 
 # Site
 FROM php:7.4-apache@sha256:c9d7e608f73832673479770d66aacc8100011ec751d1905ff63fae3fe2e0ca6d
-# COPY resources/keyman-site.conf /etc/apache2/conf-available/
+COPY resources/keyman-site.conf /etc/apache2/conf-available/
 RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 RUN chown -R www-data:www-data /var/www/html/
 
 # COPY --from=composer-builder /composer/vendor /var/www/vendor
-RUN a2enmod rewrite headers
-#RUN ; a2enconf keyman-site
+RUN a2enmod rewrite headers; a2enconf keyman-site
