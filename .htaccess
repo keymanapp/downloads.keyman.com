@@ -65,6 +65,9 @@ RewriteRule ^windows/(alpha|beta|stable)/((\d+\.)+\d+)/keyman-setup(\..+)?\.exe$
 # them all as case-insensitive. This is important because Windows is not case-sensitive, so
 # it can be fairly arbitrary on file names.
 #
+# Note that if you run Docker on Windows to test these rules, you will get misleading case
+# sensitivity mapping, because the underlying filesystem is case insensitive also.
+#
 # This depends on the following RewriteMap rule set in /etc/apache2/...conf
 #
 #    RewriteMap lc int:tolower
@@ -75,6 +78,6 @@ RewriteRule ^windows/(alpha|beta|stable)/((\d+\.)+\d+)/keyman-setup(\..+)?\.exe$
 # Will get rewritten to:
 #    https://downloads.keyman.com/windows/symbols/tike.exe/636562DBfc6000/tike.ex_
 #
-RewriteRule ^windows/symbols/([^/]+)/([^/]+)/(.+)$ windows/symbols/${lc:$1}/$2/${lc:$3} [L]
-RewriteRule ^windows/symbols/([^/]+)/([^/]+)/?$ windows/symbols/${lc:$1}/$2/ [L]
-RewriteRule ^windows/symbols/([^/]+)/?$ windows/symbols/${lc:$1}/ [L]
+RewriteRule ^windows/symbols/([^/]+)/([^/]+)/([^/]+)$ windows/symbols/${lc:$1}/$2/${lc:$3} [END]
+RewriteRule ^windows/symbols/([^/]+)/([^/]+)/?$ windows/symbols/${lc:$1}/$2/ [END]
+RewriteRule ^windows/symbols/([^/]+)/?$ windows/symbols/${lc:$1}/ [END]
