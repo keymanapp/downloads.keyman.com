@@ -1,3 +1,8 @@
 .DS_Store
 **/.DS_Store
 .idea/
+vendor
+_common
+resources/bootstrap.inc.sh
+resources/.bootstrap-registry
+resources/.bootstrap-version

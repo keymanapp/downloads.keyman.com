@@ -45,10 +45,6 @@ Header set Cache-Control no-cache "expr=%{REQUEST_URI} =~ m#^/data/#"
 Header always set Cache-Control no-cache "expr=%{REQUEST_STATUS} == 404"
 
 #
-# Keep rules following this point in sync with web.config
-#
-
-#
 # Rewrite windows/tier/version/keyman-setup+...exe bootstraps
 #
 # We also have a similar rule in our cloudflare front end, to improve
